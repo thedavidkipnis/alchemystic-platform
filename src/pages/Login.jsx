@@ -19,10 +19,23 @@ function Login() {
 
   return (
     <div class="LogInPageWrapper">
-      <form onSubmit={handleLogin}>
-        <input type="email" class="in" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
-        <button type="submit">Login</button>
+      <form onSubmit={handleLogin} className="loginForm">
+        <input
+          type="email"
+          className="loginStyledInput"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+          required
+        />
+        <input 
+          type="password" 
+          className="loginStyledInput" 
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)} 
+          placeholder="Password" 
+          required />
+        <button type="submit" className="loginButton">Login</button>
       </form>
     </div>
   );

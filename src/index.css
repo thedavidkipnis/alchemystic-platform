@@ -55,6 +55,54 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* creates 10px space between each child */
+}
+
+.loginForm input {
+  width: 100%; /* optional, full width inputs/buttons */
+}
+
+.loginStyledInput {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  padding: 8px 0;
+  font-size: 16px;
+  color: black;
+  background-color: transparent;
+  transition: border-bottom-color 0.2s ease-in-out;
+}
+
+.loginStyledInput::placeholder {
+  color: grey;
+}
+
+/* When input has content, remove underline */
+.loginStyledInput:not(:placeholder-shown) {
+  border-bottom-color: transparent;
+}
+
+.loginButton {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin-top: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 70%;
+  align-self: center; /* center the button in the form */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.loginButton:hover {
+  background-color: #333;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
