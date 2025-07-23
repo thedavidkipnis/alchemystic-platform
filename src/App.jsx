@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./pages/Register";
+import SplashPage from "./pages/SplashPage";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import DashboardClient from "./pages/DashboardClient";
@@ -12,8 +13,9 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<SplashPage />} />
+          <Route path="/app/login" element={<Login />} />
+          <Route path="/app/register" element={<Register />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/dashboard-client" element={<DashboardClient />} />
           <Route path="/dashboard-practitioner" element={<DashboardPractitioner />} />
