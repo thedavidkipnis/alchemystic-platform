@@ -16,6 +16,10 @@ function DashboardProvider() {
     }
   }
 
+  if(!currentUser) {
+    return (<div>Invalid Route: no user logged in</div>);
+  }
+
   return (
     <div>
       <h1>Welcome, Provider!</h1>
