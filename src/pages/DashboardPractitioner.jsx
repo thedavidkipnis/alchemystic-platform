@@ -1,10 +1,11 @@
 import { getAuth, signOut } from "firebase/auth";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../firebase";
 
 function DashboardPractitioner() {
 
-  const { currentUser, logout } = useAuth(); 
+  const { currentUser, role, logout } = useAuth(); 
   const navigate = useNavigate();
 
   const handleLogout = async() => {
@@ -18,6 +19,9 @@ function DashboardPractitioner() {
 
   if(!currentUser) {
     return (<div>Invalid Route: no user logged in</div>);
+  }
+  if(role != 'practitioner') {
+    return (<div>Invalid Route: wrong user type</div>);
   }
 
   return (

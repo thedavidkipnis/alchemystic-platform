@@ -3,6 +3,7 @@ import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import logo from "../assets/alch-logo.png";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -18,7 +19,8 @@ function Login() {
   };
 
   return (
-    <div class="LogInPageWrapper">
+    <div className="LogInPageWrapper">
+      <img src={logo} alt="Logo" className="logoImage"/>
       <form onSubmit={handleLogin} className="loginForm">
         <input
           type="email"

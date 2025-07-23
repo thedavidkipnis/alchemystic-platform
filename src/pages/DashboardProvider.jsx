@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function DashboardProvider() {
 
-  const { currentUser, logout } = useAuth(); 
+  const { currentUser, role, logout } = useAuth(); 
   const navigate = useNavigate();
 
   const handleLogout = async() => {
@@ -18,6 +18,9 @@ function DashboardProvider() {
 
   if(!currentUser) {
     return (<div>Invalid Route: no user logged in</div>);
+  }
+  if(role != 'provider') {
+    return (<div>Invalid Route: wrong user type</div>);
   }
 
   return (
