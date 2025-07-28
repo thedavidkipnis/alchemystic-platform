@@ -1,9 +1,6 @@
 
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -16,6 +13,9 @@
 }
 
 * {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -125,13 +125,25 @@ button:focus-visible {
   }
 }
 
-.LogInPageWrapper {
-  height: 100vh;
-  width: 100vw;
-
+.loginPageContainer {
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
 
+.LogInPageWrapper {
+  flex: 1; /* take up remaining height after Navbar */
+  display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+}
 
+.splash-container {
+  position: relative;
+  min-height: 100vh;
+  background-color: #242424;
+  color: white;
+  font-family: sans-serif;
 }

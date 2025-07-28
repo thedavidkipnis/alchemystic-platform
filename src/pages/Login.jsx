@@ -3,7 +3,7 @@ import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import logo from "../assets/alch-logo.png";
+import Navbar from "../components/Navbar";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -19,26 +19,28 @@ function Login() {
   };
 
   return (
-    <div className="LogInPageWrapper">
-      <img src={logo} alt="Logo" className="logoImage"/>
-      <form onSubmit={handleLogin} className="loginForm">
-        <input
-          type="email"
-          className="loginStyledInput"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
-          required
-        />
-        <input 
-          type="password" 
-          className="loginStyledInput" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
-          placeholder="Password" 
-          required />
-        <button type="submit" className="loginButton">Login</button>
-      </form>
+    <div className="loginPageContainer">
+      <Navbar/>
+      <div className="LogInPageWrapper">      
+        <form onSubmit={handleLogin} className="loginForm">
+          <input
+            type="email"
+            className="loginStyledInput"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+            required
+          />
+          <input 
+            type="password" 
+            className="loginStyledInput" 
+            value={password} 
+            onChange={(e) => setPassword(e.target.value)} 
+            placeholder="Password" 
+            required />
+          <button type="submit" className="loginButton">Login</button>
+        </form>
+      </div>
     </div>
   );
 }
