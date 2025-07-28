@@ -95,7 +95,7 @@ button:focus-visible {
 }
 
 .loginButton {
-  background-color: black;
+  background-color: #084656;
   color: white;
   border: none;
   padding: 10px 16px;
@@ -109,7 +109,7 @@ button:focus-visible {
 }
 
 .loginButton:hover {
-  background-color: #333;
+  background-color: #14677b;
 }
 
 @media (prefers-color-scheme: light) {
@@ -138,12 +138,14 @@ button:focus-visible {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  background-color: #EEECEC;
+
 }
 
 .splash-container {
   position: relative;
   min-height: 100vh;
-  background-color: #242424;
-  color: white;
+  background-color: #EEECEC;
+  color: black;
   font-family: sans-serif;
 }
