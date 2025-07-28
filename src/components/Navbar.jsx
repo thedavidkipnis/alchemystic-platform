@@ -35,7 +35,9 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="nav-left">
-        <img src={logo} alt="Logo" className="logo" />
+        <div onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
+            <img src={logo} alt="Logo" className="logo"/>
+        </div>
         {tabs.map((tab) =>
           tab.dropdown ? (
             <div
