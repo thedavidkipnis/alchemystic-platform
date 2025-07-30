@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 export default function SplashPage() {
   return (
     <div className="splash-container">
-      <Navbar />
+      <Navbar isLogInButtonVisible={true}/>
 
       <div className="splash-text">
         <p>

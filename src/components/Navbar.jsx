@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import logo from "../assets/alch-logo.png";
 import "../styling/Navbar.css";
 
-export default function Navbar() {
+export default function Navbar(props) {
   const navigate = useNavigate();
   const [openDropdown, setOpenDropdown] = useState(null);
   const dropdownRef = useRef(null);
@@ -113,7 +113,7 @@ export default function Navbar() {
             )}
       </div>
       <div className="nav-right">
-        <button
+        <button hidden={!props.isLogInButtonVisible}
           className="login-button"
           onClick={() => navigate("/app/login")}
         >

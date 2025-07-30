@@ -20,7 +20,7 @@ function Login() {
 
   return (
     <div className="loginPageContainer">
-      <Navbar/>
+      <Navbar isLogInButtonVisible={false}/>
       <div className="LogInPageWrapper">      
         <form onSubmit={handleLogin} className="loginForm">
           <input
