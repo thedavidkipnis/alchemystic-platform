@@ -12,6 +12,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 * {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -19,14 +23,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 body {
   min-height: 100vh;
   width: 100%;
-
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
 }
 
 #root {
@@ -183,18 +187,4 @@ button:focus-visible {
   padding: 2rem;
   text-align: center;
   font-size: 1.5rem;
-}
-
-/* Custom scrollbar for WebKit browsers (Chrome, Safari) */
-body::-webkit-scrollbar {
-  width: 8px;
-}
-
-body::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2); /* Subtle gray */
-  border-radius: 4px;
 }
