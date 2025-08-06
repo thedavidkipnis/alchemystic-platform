@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/alch-logo.png";
+import logo from "../../public/favicon.png";
 import "../styling/Navbar.css";
 
 export default function Navbar(props) {
