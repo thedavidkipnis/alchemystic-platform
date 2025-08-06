@@ -11,7 +11,7 @@ import { AuthProvider } from "./context/AuthContext";
 function App() {
   return (
     <AuthProvider>
-      <Router>
+      <Router basename="/alchemystic-platform/">
         <Routes>
           <Route path="/" element={<SplashPage />} />
           <Route path="/app/login" element={<Login />} />

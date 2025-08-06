@@ -5,60 +5,61 @@ import Navbar from "../components/Navbar";
 export default function SplashPage() {
   return (
     <div className="splash-container">
+
       <Navbar isLogInButtonVisible={true}/>
-      <div className="welcome-banner">
-        
 
-        <div className="splash-text">
-          <p>
-            [WELCOME BANNER]<br />
-            Discover an innovative approach to healing with ketamine that is
-            transformative, responsible, <br /> and deeply human.
-          </p>
+      <div className="splash-scrollable-container">
+        <div className="splash-page-section">
+          <div className="splash-text">
+            <p>
+              [WELCOME BANNER]<br />
+              Discover an innovative approach to healing with ketamine that is
+              transformative, responsible, <br /> and deeply human.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div className="splash-page-section">
-        <div className="splash-text">
-          <p>
-            [SECTION 1]<br />
-            Our collaborative approach unlocks the full potential of healing with ketamine.
-            <br />
-            We offer holistic support across the entire healing process.
-          </p>
+        <div className="splash-page-section">
+          <div className="splash-text">
+            <p>
+              [SECTION 1]<br />
+              Our collaborative approach unlocks the full potential of healing with ketamine.
+              <br />
+              We offer holistic support across the entire healing process.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div className="splash-page-section">
-        <div className="splash-text">
-          <p>
-            [SECTION 2]<br />
-            How we are bridging the gap in care
-          </p>
+        <div className="splash-page-section">
+          <div className="splash-text">
+            <p>
+              [SECTION 2]<br />
+              How we are bridging the gap in care
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div className="splash-page-section">
-        <div className="splash-text">
-          <p>
-            [SECTION 3]<br />
-            OUR VISION<br />
-            We envision a world where healing is not a moment in time but a guided process <br />
-            where ketamine-assisted treatments are provided in a holistic way to improve outcomes <br />
-            for clients and those who serve them.
-          </p>
+        <div className="splash-page-section">
+          <div className="splash-text">
+            <p>
+              [SECTION 3]<br />
+              OUR VISION<br />
+              We envision a world where healing is not a moment in time but a guided process <br />
+              where ketamine-assisted treatments are provided in a holistic way to improve outcomes <br />
+              for clients and those who serve them.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div className="splash-page-section">
-        <div className="splash-text">
-          <p>
-            [SECTION 4]<br />
-            Meet Our Team
-          </p>
+        <div className="splash-page-section">
+          <div className="splash-text">
+            <p>
+              [SECTION 4]<br />
+              Meet Our Team
+            </p>
+          </div>
         </div>
-      </div>
-
+      </div>  
     </div>
   );
 }
