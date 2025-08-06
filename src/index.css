@@ -178,7 +178,7 @@ button:focus-visible {
   flex-direction: column;
 }
 
-.collapsables-banner {
+.splash-page-section {
   height: 100vh;
   display: flex;
   flex-direction: column;
