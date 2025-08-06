@@ -39,6 +39,18 @@ function Login() {
             placeholder="Password" 
             required />
           <button type="submit" className="loginButton">Login</button>
+
+          <div className="registerPrompt">
+            <span>Don’t have an account?</span>
+            <button 
+              type="button" 
+              className="registerLinkButton"
+              onClick={() => navigate("/app/register")}
+            >
+              Register
+            </button>
+          </div>
+
         </form>
       </div>
     </div>
