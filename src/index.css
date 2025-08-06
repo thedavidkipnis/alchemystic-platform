@@ -1,5 +1,3 @@
-
-
 :root {
 
   color-scheme: light dark;
@@ -34,15 +32,6 @@ body {
   min-height: 100vh;
 }
 
-.logoImage {
-  position: absolute;
-  left: 20px;
-  top: 20px;
-
-  width: 80px;
-  height: 80px;
-}
-
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -67,88 +56,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.loginForm {
-  display: flex;
-  flex-direction: column;
-  gap: 10px; /* creates 10px space between each child */
-}
-
-.loginForm input {
-  width: 100%; /* optional, full width inputs/buttons */
-}
-
-.loginStyledInput {
-  border: none;
-  border-bottom: 1px solid black;
-  outline: none;
-  padding: 8px 0;
-  font-size: 16px;
-  color: black;
-  background-color: transparent;
-  transition: border-bottom-color 0.2s ease-in-out;
-}
-
-.loginStyledInput::placeholder {
-  color: grey;
-}
-
-/* When input has content, remove underline */
-.loginStyledInput:not(:placeholder-shown) {
-  border-bottom-color: transparent;
-}
-
-.loginButton {
-  background-color: #084656;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  margin-top: 1.5rem;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-  width: 70%;
-  align-self: center; /* center the button in the form */
-  transition: background-color 0.2s ease-in-out;
-}
-
-.loginButton:hover {
-  background-color: #14677b;
-}
-
-.registerPrompt {
-  margin-top: 0.5rem;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #999;
-}
-
-.registerLinkButton {
-  background: none;
-  color: #084656;
-  font-size: 0.85rem;
-  margin-left: 0.3rem;
-  padding: 0;
-  cursor: pointer;
-  text-decoration: underline;
-
-  border: none;
-  border-style: none;
-  outline: none;
-  box-shadow: none;
-
-  transition: color 0.2s ease-in-out;
-}
-
-.registerLinkButton:hover {
-  color: #0077cc;
-  transition: color 0.2s ease-in-out;
-
-  border: none;
-  border-style: none;
-  outline: none;
-  box-shadow: none;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -160,75 +67,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
-
-.loginPageContainer {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: #f9f9f9;
-}
-
-.LogInPageWrapper {
-  flex: 1; /* take up remaining height after Navbar */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: #EEECEC;
-
-}
-
-.splash-container {
-  position: relative;
-  min-height: 100vh;
-  background-color: #EEECEC;
-  color: black;
-  font-family: sans-serif;
-
-  margin: 0;
-  padding: 0;
-}
-
-.splash-scrollable-container {
-  height: calc(100vh - 50px);
-  overflow-y: auto;
-  padding-right: 10px;
-}
-
-.splash-scrollable-container::-webkit-scrollbar {
-  width: 10px;
-}
-
-.splash-scrollable-container::-webkit-scrollbar-track {
-  background: #f0f0f0;
-}
-
-.splash-scrollable-container::-webkit-scrollbar-thumb {
-  background-color: #084656;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.splash-scrollable-container::-webkit-scrollbar-thumb:hover {
-  background-color: #217a90;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.splash-text {
-  height: calc(100vh - 80px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 20px;
-  font-size: 1.25rem;
-}
-
-.splash-page-section {
-  height: 100vh; /* Full screen */
-  background: #f0f0f0; /* Placeholder background */
-  position: relative;
-  display: flex;
-  text-align: center;
-  flex-direction: column;
 }

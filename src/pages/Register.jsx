@@ -11,13 +11,14 @@ export default function Register() {
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
-    e.preventDefault();
-    const { user } = await createUserWithEmailAndPassword(auth, email, password);
-    await setDoc(doc(db, "users", user.uid), {
-      email,
-      role,
-    });
-    navigate("/dashboard");
+    console.log("REGISTER ATTEMPT");
+    // e.preventDefault();
+    // const { user } = await createUserWithEmailAndPassword(auth, email, password);
+    // await setDoc(doc(db, "users", user.uid), {
+    //   email,
+    //   role,
+    // });
+    // navigate("/dashboard");
   };
 
   return (

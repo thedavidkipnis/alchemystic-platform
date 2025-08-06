@@ -1,9 +1,10 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import Navbar from "../components/Navbar";
+import "../styling/LogInPage.css"
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -21,7 +22,7 @@ function Login() {
   return (
     <div className="loginPageContainer">
       <Navbar isLogInButtonVisible={false}/>
-      <div className="LogInPageWrapper">      
+      <div className="logInPageWrapper">      
         <form onSubmit={handleLogin} className="loginForm">
           <input
             type="email"
