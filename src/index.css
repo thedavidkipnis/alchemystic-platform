@@ -163,7 +163,7 @@ button:focus-visible {
 }
 
 .splash-scrollable-container::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 .splash-scrollable-container::-webkit-scrollbar-track {
@@ -172,10 +172,12 @@ button:focus-visible {
 
 .splash-scrollable-container::-webkit-scrollbar-thumb {
   background-color: #084656;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .splash-scrollable-container::-webkit-scrollbar-thumb:hover {
-  width: 8px;
+  background-color: #217a90;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .splash-text {
