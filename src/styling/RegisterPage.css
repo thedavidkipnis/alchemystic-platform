@@ -1,0 +1,91 @@
+.registerPageContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.registerPageFormContainer {
+    display: flex;
+    flex-direction: column;
+
+    height: calc(100vh - 50px);
+
+    align-items: center;
+    justify-content: center;
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.registerForm input[type="text"],
+.registerForm input[type="email"],
+.registerForm input[type="password"] {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  padding: 8px 0;
+  font-size: 16px;
+  color: black;
+  background-color: transparent;
+  transition: border-bottom-color 0.2s ease-in-out;
+  width: 100%;
+}
+
+.registerForm input::placeholder {
+  color: grey;
+}
+
+.registerForm input:not(:placeholder-shown) {
+  border-bottom-color: transparent;
+}
+
+/* Container for the radio buttons */
+.roleRadioGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+/* Each radio button label */
+.roleRadioGroup label {
+  font-size: 16px;
+  color: black;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Style the radio buttons themselves */
+.roleRadioGroup input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Register button, same as login button style */
+.registerButton {
+  background-color: #084656;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin-top: 1.5rem;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 70%;
+  align-self: center;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.registerButton:hover {
+  background-color: #14677b;
+}
