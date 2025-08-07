@@ -8,13 +8,14 @@ export default function SplashPage() {
       <Navbar isLogInButtonVisible={true}/>
 
       <div className="splash-scrollable-container">
-        <div className="splash-page-section">
-          <div className="splash-text">
-            <p>
-              [WELCOME BANNER]<br />
-              Discover an innovative approach to healing with ketamine that is
-              transformative, responsible, <br /> and deeply human.
-            </p>
+        <div className="splash-page-section splash-banner-section">
+          <div className="banner-image-overlay">
+            <div className="splash-text" >
+              <p id="splash-page-welcome-banner-header-text">
+                Discover an innovative approach to healing with ketamine that is
+                transformative, responsible, <br /> and deeply human.
+              </p>
+            </div>
           </div>
         </div>
 
