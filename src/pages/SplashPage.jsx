@@ -1,5 +1,7 @@
 import Navbar from "../components/Navbar";
 import "../styling/SplashPage.css"
+import triangle_image from "/triangle.jpeg"
+import face_paint_image from "/face-paint.jpeg"
 
 export default function SplashPage() {
   return (
@@ -20,13 +22,21 @@ export default function SplashPage() {
         </div>
 
         <div className="splash-page-section">
-          <div className="splash-text">
-            <p>
-              [SECTION 1]<br />
-              Our collaborative approach unlocks the full potential of healing with ketamine.
-              <br />
-              We offer holistic support across the entire healing process.
-            </p>
+          <div className="splash-page-section full-screen-grid">
+            <div className="grid-item image">
+              <img src={triangle_image} alt="triangle" />
+            </div>
+            <div className="grid-item text">
+              <h1>Our collaborative approach unlocks the full potential of healing with ketamine.</h1>
+              <p>While others focus on medication logistics, we are building a full-spectrum system that supports the entire healing arc — from preparation to journey work to integration — with measurable outcomes and human connection at the center.</p>
+            </div>
+            <div className="grid-item text">
+              <h1>We offer holistic support across the entire healing process.</h1>
+              <p>Our platform is designed to maximize healing across all steps of the process — from preparation and journeywork to integration.</p>
+            </div>
+            <div className="grid-item image">
+              <img src={face_paint_image} alt="face-paint" />
+            </div>
           </div>
         </div>
 
