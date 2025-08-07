@@ -16,76 +16,150 @@
 }
 
 .registerForm {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .registerForm input[type="text"],
 .registerForm input[type="email"],
 .registerForm input[type="password"] {
-  border: none;
-  border-bottom: 1px solid black;
-  outline: none;
-  padding: 8px 0;
-  font-size: 16px;
-  color: black;
-  background-color: transparent;
-  transition: border-bottom-color 0.2s ease-in-out;
-  width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    padding: 8px 0;
+    font-size: 16px;
+    color: black;
+    background-color: transparent;
+    transition: border-bottom-color 0.2s ease-in-out;
+    width: 100%;
 }
 
 .registerForm input::placeholder {
-  color: grey;
+    color: grey;
 }
 
 .registerForm input:not(:placeholder-shown) {
-  border-bottom-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.inputWithError {
+  position: relative;
+  width: 100%;
+}
+
+.errorText {
+  position: absolute;
+  right: -75px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: red;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: color 0.2s ease-in-out;
+}
+
+.registerPageLabel {
+    margin-top: 2rem;
+    color: #084656;
+    font-size: 16px;
 }
 
 /* Container for the radio buttons */
 .roleRadioGroup {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    gap: 12px;
 }
 
 /* Each radio button label */
 .roleRadioGroup label {
-  font-size: 16px;
-  color: black;
-  cursor: pointer;
-  user-select: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    background-color: white;
+    color: #084656;
+
+    border-style: solid;
+    border-color: #084656;
+    border-width: 2px;
+
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
+    flex: 1;
+
+    transition: 
+        background-color 0.2s ease-in-out, 
+        color 0.2s ease-in-out, 
+        border-color 0.2s ease-in-out, 
+        border-radius 0.2s ease-in-out, 
+        transform 0.1s ease-in-out;
+}
+
+.roleRadioGroup label:hover {
+    background-color: #14677b;
+    border-color: #14677b;
+    color: white;
+}
+
+.roleRadioGroup label:active {
+    background-color: #2c91aa;
+    border-color: #2c91aa;
+    color: white;
+    transition: background-color 0.1s;
+    transform: scale(0.97);
+}
+
+/* Hide the native radio input */
+.radioButton input[type="radio"] {
+  display: none;
+}
+
+.radioButton {
   display: flex;
   align-items: center;
-  gap: 6px;
-}
-
-/* Style the radio buttons themselves */
-.roleRadioGroup input[type="radio"] {
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-}
-
-/* Register button, same as login button style */
-.registerButton {
+  justify-content: center;
+  padding: 10px 16px;
   background-color: #084656;
   color: white;
-  border: none;
-  padding: 10px 16px;
-  margin-top: 1.5rem;
+  background-color: #084656;
+  border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 4px;
-  width: 70%;
-  align-self: center;
-  transition: background-color 0.2s ease-in-out;
+  flex: 1;
+  text-align: center;
+}
+
+/* Selected state */
+.radioButton.selected {
+  background-color: #084656;
+  color: white;
+  border-color: #084656;
+  border-radius: 30px;
+}
+
+.registerButton {
+    background-color: #084656;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    margin-top: 2rem;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 70%;
+    align-self: center;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .registerButton:hover {
-  background-color: #14677b;
+    background-color: #14677b;
 }

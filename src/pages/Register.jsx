@@ -11,12 +11,36 @@ export default function Register() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("A");
+  const [role, setRole] = useState("");
+
+  const [errors, setErrors] = useState({
+    name: "",
+    lastName: "",
+    email: "",
+    password: "",
+    role: ""
+  })
+
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
-    console.log("REGISTER ATTEMPT");
-    // e.preventDefault();
+
+    e.preventDefault();
+
+    const newErrors = {};
+
+    if (!name.trim()) newErrors.name = "required";
+    if (!lastName.trim()) newErrors.lastName = "required";
+    if (!email.trim()) newErrors.email = "required";
+    if (!password.trim()) newErrors.password = "required";
+    if (!role) newErrors.role = "Please select a role";
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) { // user didn't fill a field out
+      return;
+    }
+
     // const { user } = await createUserWithEmailAndPassword(auth, email, password);
     // await setDoc(doc(db, "users", user.uid), {
     //   email,
@@ -30,37 +54,49 @@ export default function Register() {
       <Navbar isLogInButtonVisible={true}/>
       <div className="registerPageFormContainer">
         <form onSubmit={handleRegister} className="registerForm">
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="First Name"
-            required
-          />
-          <input
-            type="text"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            placeholder="Last Name"
-            required
-          />
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            required
-          />
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            required
-          />
+          <div className="inputWithError">
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="First Name"
+            />
+            {errors.name && <span className="errorText">{errors.name}</span>}
+          </div>
+          <div className="inputWithError">
+            <input
+              type="text"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              placeholder="Last Name"
+            />
+            {errors.lastName && <span className="errorText">{errors.lastName}</span>}
+          </div>
+          <div className="inputWithError">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+            />
+            {errors.email && <span className="errorText">{errors.email}</span>}
+          </div>
+          <div className="inputWithError">
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+            />
+            {errors.password && <span className="errorText">{errors.password}</span>}
+          </div>
+
+          <label className="registerPageLabel">
+            What type of user are you?
+          </label>
 
           <div className="roleRadioGroup">
-            <label>
+            <label className={role === "Client" ? "radioButton selected" : "radioButton"}>
               <input
                 type="radio"
                 value="Client"
@@ -69,7 +105,7 @@ export default function Register() {
               />
               Client
             </label>
-            <label>
+            <label className={role === "Practitioner" ? "radioButton selected" : "radioButton"}>
               <input
                 type="radio"
                 value="Practitioner"
@@ -78,7 +114,7 @@ export default function Register() {
               />
               Practitioner
             </label>
-            <label>
+            <label className={role === "Provider" ? "radioButton selected" : "radioButton"}>
               <input
                 type="radio"
                 value="Provider"
@@ -88,7 +124,9 @@ export default function Register() {
               Provider
             </label>
           </div>
+
           <button type="submit" className="registerButton">Register</button>
+          
         </form>
       </div>
     </div>
