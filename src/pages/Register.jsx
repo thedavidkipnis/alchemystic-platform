@@ -92,7 +92,7 @@ export default function Register() {
           </div>
 
           <label className="registerPageLabel">
-            What type of user are you?
+            I am a:
           </label>
 
           <div className="roleRadioGroup">

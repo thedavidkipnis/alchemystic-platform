@@ -1,9 +1,81 @@
+import {useState} from "react";
 import Navbar from "../components/Navbar";
 import "../styling/SplashPage.css"
 import triangle_image from "/triangle.jpeg"
 import face_paint_image from "/face-paint.jpeg"
+import janet from "/janet.jpeg"
+import jimmy from "/jimmy.jpeg"
+import christina from "/christina.jpeg"
+import adriana from "/adriana.jpeg"
+import pj from "/pj.jpeg"
 
 export default function SplashPage() {
+
+  const [expanded, setExpanded] = useState({});
+
+    const toggleRow = (col, row) => {
+      const key = `${col}-${row}`;
+      setExpanded((prev) => ({
+        ...prev,
+        [key]: !prev[key],
+      }));
+    }; 
+    
+  const columnsData = [
+    {
+      title: "Clients",
+      rows: [
+        {
+          header: "Healing can feel lonely, shallow, or overwhelming",
+          content: "We provide personalized care pathways that adapt and evolve over the course of the healing journey",
+        },
+        {
+          header: "Left without guidance after a dosing session",
+          content: "Step-by-step integration tools, personalized guidance, and a real human support system — so breakthroughs don’t fade, they become real change",
+        },
+        {
+          header: "No consistent support system",
+          content: "The Healing Triangle that connects provider, practitioner, and client — and offers education for loved ones, so the entire support system is prepared",
+        },
+      ],
+    },
+    {
+      title: "Providers",
+      rows: [
+        {
+          header: "Client drop off and outcomes are unclear",
+          content: "Sync Engine provides measurable progress without expanding internal staffing resources",
+        },
+        {
+          header: "Inconsistent retention and low client referrals",
+          content: "Structured post-care engagement in order to lead to higher retention, stronger word-of-mouth, and measurable outcomes that boost your credibility",
+        },
+        {
+          header: "Fragmented care",
+          content: "Our system integrates into your existing workflow — delivering post-session integration, outcome tracking, and client collaboration",
+        },
+      ],
+    },
+    {
+      title: "Practitioners",
+      rows: [
+        {
+          header: "Limited credibility and visibility",
+          content: "We plug you into a care system that backs your practice with structured plans, training, collaboration hubs, and marketing strategy support for your practice",
+        },
+        {
+          header: "Disconnected from clinical care and flying solo",
+          content: "An Integration Engine to offer trauma-informed tools. Cognitive-to-Somatic map and trusted collaboration",
+        },
+        {
+          header: "Burnout from holding it all alone",
+          content: "A structured integration framework built around human support, so you’re not constantly reinventing the wheel or feeling drained",
+        },
+      ],
+    },
+  ];
+
+
   return (
     <div className="splash-container">
 
@@ -41,21 +113,13 @@ export default function SplashPage() {
             </div>
           </div>
         </div>
-
-        <div className="splash-page-section">
+        
+        <div className="splash-page-section our-vision">
           <div className="splash-text">
             <p>
-              [SECTION 2]<br />
-              How we are bridging the gap in care
-            </p>
-          </div>
-        </div>
-
-        <div className="splash-page-section">
-          <div className="splash-text">
-            <p>
-              [SECTION 3]<br />
-              OUR VISION<br />
+              <h1>OUR VISION</h1>
+              <br />
+              <br />
               We envision a world where healing is not a moment in time but a guided process <br />
               where ketamine-assisted treatments are provided in a holistic way to improve outcomes <br />
               for clients and those who serve them.
@@ -63,12 +127,88 @@ export default function SplashPage() {
           </div>
         </div>
 
+        <div className="splash-page-section bridging-the-gap-in-care">
+          <div className="section-header">
+            <h1>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              How we are bridging the gap in care</h1>
+          </div>
+          <div className="section-content">
+            <div className="three-column-grid">
+              {columnsData.map((col, colIndex) => (
+                <div className="column" key={col.title}>
+                  <h2 className="column-title">{col.title}</h2>
+
+                  {col.rows.map((row, rowIndex) => {
+                    const key = `${colIndex}-${rowIndex}`;
+                    const isOpen = expanded[key] || false;
+
+                    return (
+                      <div
+                        key={key}
+                        className={`collapsible-row ${isOpen ? "open" : ""}`}
+                      >
+                        <div
+                          className="row-header"
+                          onClick={() => toggleRow(colIndex, rowIndex)}
+                        >
+                          {row.header}
+                        </div>
+                        {isOpen && <div className="row-content">{row.content}</div>}
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <div className="splash-page-section">
-          <div className="splash-text">
-            <p>
-              [SECTION 4]<br />
-              Meet Our Team
-            </p>
+          <div className="team-section-wrapper">
+
+            <h2 className="team-section-title">Meet The Team</h2>
+
+            <div className="team-section">
+              <button
+                className="team-scroll-btn left-btn"
+                onClick={() => {
+                  document.getElementById("team-scroll").scrollBy({ left: -300, behavior: "smooth" });
+                }}
+              >
+                ◀
+              </button>
+
+              <button
+                className="team-scroll-btn right-btn"
+                onClick={() => {
+                  document.getElementById("team-scroll").scrollBy({ left: 300, behavior: "smooth" });
+                }}
+              >
+                ▶
+              </button>
+
+              {/* Scrollable Container */}
+              <div id="team-scroll" className="team-scroll-container">
+                {[
+                  { name: "Christina Cundiff", title: "Chief Executive Officer", role: "Facilitator and Certified Preparation, Integration, Wellness, and Nutrition Coach", img: christina },
+                  { name: "Adriana Giraldo BSW, MHRLR", title: "Chief Operating & Program Officer", role: "Somatic Coach and Integration Mentor | Trauma-Informed | Mind-Body Nutrition Practitioner", img: adriana },
+                  { name: "Jnaet Livingstone MA, ACC", title: "Chief Learning Officer", role: "IFS-Informed Integration Coach, Facilitator", img: janet },
+                  { name: "Patricia Johnson", title: "Director of Research & Development", role: "Certified Preparation & Integration Coach, Om Kara Kriya Lineage Holder (Tantra)", img: pj },
+                  { name: "Jimmy Shaffer", title: "Director of Education & Training", role: "", img: jimmy },
+                ].map((member, idx) => (
+                  <div key={idx} className="team-card">
+                    <img src={member.img} alt={member.name} className="team-photo" />
+                    <h3 className="team-name">{member.name}</h3>
+                    <p className="team-role">{member.title}</p>
+                    <p className="team-role">{member.role}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>  

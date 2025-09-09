@@ -9,6 +9,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
+
+  --primary-color: #084656;
+
 }
 
 * {
