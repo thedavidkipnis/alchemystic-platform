@@ -130,10 +130,6 @@ export default function SplashPage() {
         <div className="splash-page-section bridging-the-gap-in-care">
           <div className="section-header">
             <h1>
-              <br/>
-              <br/>
-              <br/>
-              <br/>
               How we are bridging the gap in care</h1>
           </div>
           <div className="section-content">
@@ -170,13 +166,13 @@ export default function SplashPage() {
         <div className="splash-page-section">
           <div className="team-section-wrapper">
 
-            <h2 className="team-section-title">Meet The Team</h2>
+            <h1 className="team-section-title">Meet The Team</h1>
 
             <div className="team-section">
               <button
                 className="team-scroll-btn left-btn"
                 onClick={() => {
-                  document.getElementById("team-scroll").scrollBy({ left: -300, behavior: "smooth" });
+                  document.getElementById("team-scroll").scrollBy({ left: -1000, behavior: "smooth" });
                 }}
               >
                 ◀
@@ -185,7 +181,7 @@ export default function SplashPage() {
               <button
                 className="team-scroll-btn right-btn"
                 onClick={() => {
-                  document.getElementById("team-scroll").scrollBy({ left: 300, behavior: "smooth" });
+                  document.getElementById("team-scroll").scrollBy({ left: 1000, behavior: "smooth" });
                 }}
               >
                 ▶
