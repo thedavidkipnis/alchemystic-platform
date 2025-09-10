@@ -1,0 +1,10 @@
+.provider-dashboard {
+    width: 100vw;
+    height: calc(100vh - 50px);
+    background-color: #f9f9f9;
+    color: black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

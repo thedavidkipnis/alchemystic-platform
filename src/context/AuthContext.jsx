@@ -12,6 +12,8 @@ export function useAuth() {
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [role, setRole] = useState(null);
+  const [userName, setUserName] = useState(null);
+  const [userLastName, setUserLastName] = useState(null);
   const [loading, setLoading] = useState(true);
 
 
@@ -21,11 +23,14 @@ export function AuthProvider({ children }) {
       if (user) {
         const userDoc = await getDoc(doc(db, "users", user.uid));
         if (userDoc.exists()) {
-          console.log("FOUND ROLE:", userDoc.data().role)
           setRole(userDoc.data().role);
+          setUserName(userDoc.data().name);
+          setUserLastName(userDoc.data().lastName);
         }
       } else {
         setRole(null);
+        setUserName(null);
+        setUserLastName(null);
       }
       setLoading(false);
     });
@@ -39,7 +44,7 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ currentUser, role, logout }}>
+    <AuthContext.Provider value={{ currentUser, role, userName, userLastName, logout }}>
       {!loading && children}
     </AuthContext.Provider>
   );

@@ -1,10 +1,12 @@
 import { getAuth, signOut } from "firebase/auth";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import DashboardNavbar from "../components/DashboardNavbar";
+import "../styling/ProviderDashboard.css";
 
 function DashboardProvider() {
 
-  const { currentUser, role, logout } = useAuth(); 
+  const { currentUser, role, userName, userLastName, logout } = useAuth(); 
   const navigate = useNavigate();
   const handleLogout = async() => {
     try {
@@ -23,10 +25,11 @@ function DashboardProvider() {
   }
 
   return (
-    <div>
-      <h1>Welcome, Provider!</h1>
-      <p>This is your dashboard.</p>
-      <button onClick={handleLogout}>Log out</button>
+    <div className="provider-dashboard-wrapper">
+      <DashboardNavbar />
+      <div className="provider-dashboard">
+        <h1>Welcome, {userName}!</h1>
+      </div>
     </div>
   );
 }

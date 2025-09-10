@@ -36,7 +36,7 @@ export default function Register() {
 
     setErrors(newErrors);
 
-    if (Object.keys(newErrors).length > 0) { // user didn't fill a field out
+    if (Object.keys(newErrors).length > 0) {
       return;
     }
 
