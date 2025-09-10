@@ -116,10 +116,11 @@ export default function SplashPage() {
         
         <div className="splash-page-section our-vision">
           <div className="splash-text">
+            
+            <h1>OUR VISION</h1>
+            <br />
+            <br />
             <p>
-              <h1>OUR VISION</h1>
-              <br />
-              <br />
               We envision a world where healing is not a moment in time but a guided process <br />
               where ketamine-assisted treatments are provided in a holistic way to improve outcomes <br />
               for clients and those who serve them.

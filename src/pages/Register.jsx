@@ -26,7 +26,6 @@ export default function Register() {
   const handleRegister = async (e) => {
 
     e.preventDefault();
-
     const newErrors = {};
 
     if (!name.trim()) newErrors.name = "required";
@@ -41,12 +40,14 @@ export default function Register() {
       return;
     }
 
-    // const { user } = await createUserWithEmailAndPassword(auth, email, password);
-    // await setDoc(doc(db, "users", user.uid), {
-    //   email,
-    //   role,
-    // });
-    // navigate("/dashboard");
+    const { user } = await createUserWithEmailAndPassword(auth, email, password);
+    await setDoc(doc(db, "users", user.uid), {
+      email,
+      role,
+      name,
+      lastName
+    });
+    navigate("/dashboard");
   };
 
   return (
@@ -96,29 +97,29 @@ export default function Register() {
           </label>
 
           <div className="roleRadioGroup">
-            <label className={role === "Client" ? "radioButton selected" : "radioButton"}>
+            <label className={role === "client" ? "radioButton selected" : "radioButton"}>
               <input
                 type="radio"
-                value="Client"
-                checked={role === "Client"}
+                value="client"
+                checked={role === "client"}
                 onChange={(e) => setRole(e.target.value)}
               />
               Client
             </label>
-            <label className={role === "Practitioner" ? "radioButton selected" : "radioButton"}>
+            <label className={role === "practitioner" ? "radioButton selected" : "radioButton"}>
               <input
                 type="radio"
-                value="Practitioner"
-                checked={role === "Practitioner"}
+                value="practitioner"
+                checked={role === "practitioner"}
                 onChange={(e) => setRole(e.target.value)}
               />
               Practitioner
             </label>
-            <label className={role === "Provider" ? "radioButton selected" : "radioButton"}>
+            <label className={role === "provider" ? "radioButton selected" : "radioButton"}>
               <input
                 type="radio"
-                value="Provider"
-                checked={role === "Provider"}
+                value="provider"
+                checked={role === "provider"}
                 onChange={(e) => setRole(e.target.value)}
               />
               Provider

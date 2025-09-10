@@ -6,7 +6,6 @@ function DashboardProvider() {
 
   const { currentUser, role, logout } = useAuth(); 
   const navigate = useNavigate();
-
   const handleLogout = async() => {
     try {
       await logout();
