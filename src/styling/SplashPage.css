@@ -332,3 +332,52 @@
 .team-scroll-btn.right-btn {
   right: 1rem;
 }
+
+.splash-page-footer {
+  min-height: 150px;
+  width: 100vw;
+  background-color: #217a90;
+}
+
+.splash-page-footer-half {
+  min-height: 50%;
+  width: 100vw;
+  padding: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.splash-page-footer-half a {
+  text-decoration: none;
+  color: #f0f0f0;
+  transition: color 0.2s ease-in-out;
+}
+
+.splash-page-footer-half a:hover {
+  color: #cdcdcd;
+}
+
+.splash-page-footer-link-icon {
+  height: 45px;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+}
+
+.splash-page-footer-link-icon img {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #f0f0f0;
+
+  transition: border-color 0.2s ease-in-out;
+
+}
+
+.splash-page-footer-link-icon img:hover {
+  border-color: #cdcdcd;
+}

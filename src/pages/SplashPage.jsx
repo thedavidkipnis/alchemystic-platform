@@ -1,13 +1,6 @@
 import {useState} from "react";
 import Navbar from "../components/Navbar";
 import "../styling/SplashPage.css"
-import triangle_image from "/triangle.jpeg"
-import face_paint_image from "/face-paint.jpeg"
-import janet from "/janet.jpeg"
-import jimmy from "/jimmy.jpeg"
-import christina from "/christina.jpeg"
-import adriana from "/adriana.jpeg"
-import pj from "/pj.jpeg"
 
 export default function SplashPage() {
 
@@ -97,7 +90,7 @@ export default function SplashPage() {
           <div className="full-screen-grid-wrapper">
             <div className="full-screen-grid">
               <div className="grid-item image">
-                <img src={triangle_image} alt="triangle" />
+                <img src="triangle.jpeg" alt="triangle" />
               </div>
               <div className="grid-item text">
                 <h1>Our collaborative approach unlocks the full potential of healing with ketamine.</h1>
@@ -108,7 +101,7 @@ export default function SplashPage() {
                 <p>Our platform is designed to maximize healing across all steps of the process — from preparation and journeywork to integration.</p>
               </div>
               <div className="grid-item image">
-                <img src={face_paint_image} alt="face-paint" />
+                <img src="face-paint.jpeg" alt="face-paint" />
               </div>
             </div>
           </div>
@@ -191,11 +184,11 @@ export default function SplashPage() {
               {/* Scrollable Container */}
               <div id="team-scroll" className="team-scroll-container">
                 {[
-                  { name: "Christina Cundiff", title: "Chief Executive Officer", role: "Facilitator and Certified Preparation, Integration, Wellness, and Nutrition Coach", img: christina },
-                  { name: "Adriana Giraldo BSW, MHRLR", title: "Chief Operating & Program Officer", role: "Somatic Coach and Integration Mentor | Trauma-Informed | Mind-Body Nutrition Practitioner", img: adriana },
-                  { name: "Jnaet Livingstone MA, ACC", title: "Chief Learning Officer", role: "IFS-Informed Integration Coach, Facilitator", img: janet },
-                  { name: "Patricia Johnson", title: "Director of Research & Development", role: "Certified Preparation & Integration Coach, Om Kara Kriya Lineage Holder (Tantra)", img: pj },
-                  { name: "Jimmy Shaffer", title: "Director of Education & Training", role: "", img: jimmy },
+                  { name: "Christina Cundiff", title: "Chief Executive Officer", role: "Facilitator and Certified Preparation, Integration, Wellness, and Nutrition Coach", img: "christina.jpeg" },
+                  { name: "Adriana Giraldo BSW, MHRLR", title: "Chief Operating & Program Officer", role: "Somatic Coach and Integration Mentor | Trauma-Informed | Mind-Body Nutrition Practitioner", img: "adriana.jpeg" },
+                  { name: "Jnaet Livingstone MA, ACC", title: "Chief Learning Officer", role: "IFS-Informed Integration Coach, Facilitator", img: "janet.jpeg" },
+                  { name: "Patricia Johnson", title: "Director of Research & Development", role: "Certified Preparation & Integration Coach, Om Kara Kriya Lineage Holder (Tantra)", img: "pj.jpeg" },
+                  { name: "Jimmy Shaffer", title: "Director of Education & Training", role: "", img: "jimmy.jpeg" },
                 ].map((member, idx) => (
                   <div key={idx} className="team-card">
                     <img src={member.img} alt={member.name} className="team-photo" />
@@ -207,6 +200,35 @@ export default function SplashPage() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="splash-page-footer">
+            <div className="splash-page-footer-half">
+                <a href="/">Terms & Conditions</a>
+                <a href="/">Medical Disclaimers</a>
+                <a href="/">Privacy Policy</a>
+                <a href="/">Contact Us</a>
+                <a href="/">Tech Support</a>
+            </div>
+            
+            <div className="splash-page-footer-half">
+              <a className="splash-page-footer-link-icon" 
+              href="https://www.facebook.com/profile.php?id=61575491257389"
+              target="_blank"
+              rel="noopener noreferrer">
+                <img
+                  src="facebook.png"
+                />
+              </a>
+              <a className="splash-page-footer-link-icon" 
+              href="https://www.linkedin.com/feed/update/urn:li:activity:7358844338610601986/"
+              target="_blank"
+              rel="noopener noreferrer">
+                <img
+                  src="linkedin.png"
+                />
+              </a>
+            </div>
         </div>
       </div>  
     </div>
