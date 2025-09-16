@@ -107,17 +107,31 @@ export default function SplashPage() {
           </div>
         </div>
         
-        <div className="splash-page-section our-vision">
+        <div className="splash-page-section">
           <div className="splash-text">
-            
-            <h1>OUR VISION</h1>
-            <br />
-            <br />
-            <p>
-              We envision a world where healing is not a moment in time but a guided process <br />
-              where ketamine-assisted treatments are provided in a holistic way to improve outcomes <br />
-              for clients and those who serve them.
-            </p>
+            <div className="our-vision">
+              <div className="our-vision-half">
+                <h1>OUR VISION</h1>
+                <br />
+                <br />
+                <p>
+                  We envision a world where healing is not a moment in time but a guided process
+                  where ketamine-assisted treatments are provided in a holistic way to improve outcomes
+                  for clients and those who serve them.
+                </p>
+              </div>
+              <div className="our-vision-half">
+                <h1>OUR MISSION</h1>
+                <br />
+                <br />
+                <p>
+                   We seek to bridge the gap among practitioners, providers, 
+                   and clients to enhance ketamine treatment outcomes. We deliver a collaborative 
+                   ecosystem where all are supported, informed, and connected, 
+                   thereby unlocking the full potential of ketamine therapy.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 

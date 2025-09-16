@@ -148,7 +148,7 @@
 }
 
 .bridging-the-gap-in-care {
-  height: calc(100vh - 50px);
+  height: calc(100vh - 80px);
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -226,6 +226,19 @@
 
 .our-vision {
   background-color: #dec6a3;
+  display: flex;
+}
+
+.our-vision-half {
+  width: 50vw;
+  height: calc(100vh - 70px); 
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
 }
 
 .team-section-wrapper {
@@ -234,7 +247,7 @@
   align-items: center;
   justify-content: center;
 
-  height: calc(100vh - 50px);
+  height: calc(100vh - 80px);
   width: 100%;
 }
 
