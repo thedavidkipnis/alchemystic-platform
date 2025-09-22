@@ -1,11 +1,12 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import Navbar from "../components/Navbar";
 import "../styling/SplashPage.css"
 
 export default function SplashPage() {
 
   const [expanded, setExpanded] = useState({});
-
+  const [isScreenSupported, setIsScreenSupported] = useState(true);
+  
     const toggleRow = (col, row) => {
       const key = `${col}-${row}`;
       setExpanded((prev) => ({
@@ -14,6 +15,29 @@ export default function SplashPage() {
       }));
     }; 
     
+  // Screen check
+  useEffect(() => {
+    const checkScreen = () => {
+      const minWidth = 768; // minimum width for desktop/tablet
+      const isPortrait = window.innerWidth < window.innerHeight; // portrait mode likely mobile
+      setIsScreenSupported(window.innerWidth >= minWidth && !isPortrait);
+    };
+
+    checkScreen(); // initial check
+    window.addEventListener("resize", checkScreen);
+
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  if (!isScreenSupported) {
+    return (
+      <div style={{ textAlign: "center", marginTop: "50px" }}>
+        <h2>Screen too small or unsupported</h2>
+        <p>This app is optimized for desktop or tablet landscape views.</p>
+      </div>
+    );
+  }
+
   const columnsData = [
     {
       title: "Clients",
