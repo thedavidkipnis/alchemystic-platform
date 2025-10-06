@@ -6,6 +6,8 @@ import Dashboard from "./pages/Dashboard";
 import DashboardClient from "./pages/DashboardClient";
 import DashboardPractitioner from "./pages/DashboardPractitioner";
 import DashboardProvider from "./pages/DashboardProvider";
+import ForClientsSplash from "./pages/ForClientsSplash";
+import PUC from "./pages/PAGEUNDERCONSTRUCTION";
 import { AuthProvider } from "./context/AuthContext";
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
           <Route path="/dashboard-client" element={<DashboardClient />} />
           <Route path="/dashboard-practitioner" element={<DashboardPractitioner />} />
           <Route path="/dashboard-provider" element={<DashboardProvider />} />
+          <Route path="/clients-splash-page" element={<ForClientsSplash />} />
+          <Route path="/tbd" element={<PUC />} />
         </Routes>
       </Router>
     </AuthProvider>

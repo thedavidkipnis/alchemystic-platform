@@ -6,6 +6,7 @@ import "../styling/Navbar.css";
 export default function Navbar(props) {
   const navigate = useNavigate();
   const [openDropdown, setOpenDropdown] = useState(null);
+  const hoveredTabItem = useRef(false);
   const dropdownRef = useRef(null);
 
   const handleDropdown = (label) => {
@@ -15,10 +16,11 @@ export default function Navbar(props) {
    useEffect(() => {
     const handleClickOutside = (event) => {
       if (
+        !hoveredTabItem.current &&
         dropdownRef.current &&
         !dropdownRef.current.contains(event.target)
       ) {
-        setOpenDropdown(null);
+        setOpenDropdown(null); console.log(hoveredTabItem.current);
       }
     };
 
@@ -29,42 +31,43 @@ export default function Navbar(props) {
   }, []);
 
   const tabs = [
-    { label: "About Us", link: "/about" },
+    { label: "About Us", link: "/tbd" },
     {
-      label: "Protocols & Resources",
+      label: "For Clients",
       dropdown: [
-        { label: "Why Trauma?", link: "/protocols" },
-        { label: "Emotional Reset", link: "/resources" },
-        { label: "Depression, PTSD, CPTSD, Anxiety", link: "/resources" },
-        { label: "Overwhelm, Hopelessness", link: "/resources" },
-        { label: "Community Call", link: "/resources" }
+        { label: "Why choose Alchemystic?", link: "/clients-splash-page" },
+        { label: "What's the deal with ketamine?", link: "/clients-splash-page" },
+        { label: "How does ketamine work?", link: "/clients-splash-page" },
+        { label: "Safety Considerations", link: "/clients-splash-page" },
+        { label: "Common ketamine myths", link: "/clients-splash-page" },
+        { label: "Why is emotional support essential?", link: "/clients-splash-page" },
+        { label: "Emotional support explained", link: "/clients-splash-page" },
+        { label: "Loved ones and ketamine", link: "/clients-splash-page" }
       ],
     },
     {
-      label: "Education/Training",
+      label: "For Providers",
       dropdown: [
-        { label: "What's Ketamine?", link: "/courses" },
-        { label: "PLACEHOLDER", link: "/courses" },
-        { label: "PLACEHOLDER", link: "/courses" },
-        { label: "PLACEHOLDER", link: "/courses" },
-        { label: "External Resources", link: "/workshops" }
+        { label: "TBD", link: "/tbd" },
       ],
     },
     { 
-        label: "Collaborators", 
-        dropdown: [
-        { label: "What's Ketamine?", link: "/courses" },
-        { label: "PLACEHOLDER", link: "/courses" },
-        { label: "PLACEHOLDER", link: "/courses" },
-        { label: "PLACEHOLDER", link: "/courses" },
-        { label: "External Resources", link: "/workshops" }
+      label: "For Practitioners", 
+      dropdown: [
+        { label: "TBD", link: "/tbd" },
       ]
     },
-    { label: "Donate", link: "/donate" },
+    { 
+      label: "For Families", 
+      dropdown: [
+        { label: "TBD", link: "/tbd" },
+      ]
+    },
+    { label: "Donate", link: "/tbd" },
     { label: "Contact Us", 
         dropdown: [
-        { label: "Email us", link: "/protocols" },
-        { label: "Book an appointment", link: "/resources" }
+        { label: "Email us", link: "/tbd" },
+        { label: "Book an appointment", link: "/tbd" }
       ]
     },
   ];
@@ -85,11 +88,13 @@ export default function Navbar(props) {
                     {tab.label}
                 </button>
                 {openDropdown === tab.label && (
-                    <div className="dropdown-content">
+                    <div className="dropdown-content"> 
                     {tab.dropdown.map((item) => (
-                        <div
+                        <div 
                         key={item.label}
                         className="dropdown-item"
+                        onMouseEnter={() => hoveredTabItem.current = true}
+                        onMouseLeave={() => hoveredTabItem.current = false}
                         onClick={() => {
                             setOpenDropdown(null);
                             navigate(item.link);
